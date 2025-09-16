@@ -2012,7 +2012,7 @@
               "color": "#141414"
             },
             ".mbr-section-title, .mbr-section-btn": {
-              "text-align": "center"
+              "text-align": "left"
             }
           },
           "_name": "form01",
