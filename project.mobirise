@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "our-work.html",
     "theme": {
       "name": "operationm5",
       "title": "OperationM5",
@@ -143,7 +143,7 @@
     "global_footer_custom": "<!-- Structured Data for Leadership Team -->\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"RIDERS-ELSE\",\n  \"url\": \"https://www.riders-else.com\",\n  \"logo\": \"https://www.riders-else.com/assets/images/logo.png\",\n  \"sameAs\": [\n    \"https://www.facebook.com/riderselsetextile\",\n    \"https://www.linkedin.com/company/riders-else\",\n    \"https://www.instagram.com/riders_else_textile\"\n  ],\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"Sarbet K F J Apartments\",\n    \"addressLocality\": \"Addis Ababa\",\n    \"addressCountry\": \"Ethiopia\"\n  },\n  \"contactPoint\": {\n    \"@type\": \"ContactPoint\",\n    \"telephone\": \"+251-911-072513\",\n    \"email\": \"info@ridersgroupsc.com\",\n    \"contactType\": \"Customer Service\"\n  },\n  \"member\": [\n    {\n      \"@type\": \"Person\",\n      \"name\": \"Natnael Tewodros\",\n      \"jobTitle\": \"Chief Executive Officer\",\n      \"description\": \"Leads RIDERS-ELSE with over 15 years of experience in textile manufacturing and international trade.\"\n    },\n    {\n      \"@type\": \"Person\",\n      \"name\": \"Samuel Bekele\",\n      \"jobTitle\": \"Chief Operations Officer\",\n      \"description\": \"Oversees all manufacturing operations with expertise in sustainable production practices.\"\n    },\n    {\n      \"@type\": \"Person\",\n      \"name\": \"Tigist Haile\",\n      \"jobTitle\": \"Chief Financial Officer\",\n      \"description\": \"Manages financial strategy with background in international business and textile industry economics.\"\n    }\n  ]\n}\n</script>",
     "global_before_html": "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>\n<!-- End Google Tag Manager -->",
     "cookiesAlert": false,
-    "publishChangesOnly": false
+    "publishChangesOnly": true
   },
   "pages": {
     "index.html": {
