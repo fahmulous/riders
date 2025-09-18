@@ -12491,9 +12491,10 @@ a {
   padding: 25px;
   height: 75%;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   min-height: 380px;
+  text-align: left;
 }
 @media (max-width: 992px) {
   .cid-uW1Jo8M9z0 .items-wrapper .item .item-wrapper .card-box {
@@ -12638,9 +12639,8 @@ a {
   text-align: center;
   color: #000c3f;
 }
-.cid-uW1Jo8M9z0 .card-text_3,
 .cid-uW1Jo8M9z0 .mbr-section-btn {
-  text-align: left;
+  text-align: center;
 }
 .cid-uWZ2WC28Hu {
   padding-top: 0rem;
