@@ -131,7 +131,7 @@
       }
     ],
     "imageResize": false,
-    "uniqCompNum": 548,
+    "uniqCompNum": 554,
     "versionPublish": "6.0.6",
     "screenshot": "screenshot.png",
     "favicon": false,
@@ -1310,6 +1310,78 @@
           "_params": {}
         },
         {
+          "_name": "features8",
+          "_sourceTheme": "agencym4",
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".card": {
+              "padding": "1rem 1rem 3rem 1rem"
+            },
+            ".card-img": {
+              "padding-bottom": "2rem"
+            },
+            ".mbr-text": {
+              "color": "#767676"
+            },
+            "span": {
+              "font-size": "14px",
+              "color": "#ffffff"
+            },
+            ".mbr-section-btn": {
+              "margin-left": "0"
+            },
+            ".date": {
+              "span": {
+                "display": "inline-block",
+                "background-color": "@secondaryColor",
+                "padding": "0.2rem 1rem",
+                "white-space": "nowrap",
+                "text-overflow": "ellipsis",
+                "max-width": "90%",
+                "overflow": "hidden"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".card-title": {
+                "text-align": "center"
+              },
+              "p.mbr-text, p.date": {
+                "text-align": "center"
+              }
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features8 agencym4_features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n\t<mbr-parameters>\n\t\t\n\t\t<header>Size</header>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"3\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"3\">\n\t\t<select title=\"Cards\" name=\"cardsAmount\">\n\t\t\t<option value=\"1\">1</option>\n\t\t\t<option value=\"2\">2</option>\n\t\t\t<option value=\"3\" selected>3</option>\n\t\t</select>\n\t\t<header>Show / Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"SubTitle\" name=\"showSubtitle\">\n\t\t<input type=\"checkbox\" title=\"Date\" name=\"showDate\" checked>\n\t\t<input type=\"checkbox\" title=\"Content Title\" name=\"showContentTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n\t\t<input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-11.jpg\" parallax>\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#f9f9f9\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=E0Pa8tYo94U\">\n\t\t</fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-11.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n\t\t\n\t</mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n\t<div class=\"container\">\n\t\t<div>\n\t\t\t<h2 class=\"mbr-fonts-style mb-4 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">News\n\t\t\t</h2>\n\t\t\t<h3 class=\"mbr-section-subtitle mbr-fonts-style mb-5 mbr-light align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n\t\t\t\tClick any text to edit or style it. Select text to insert a link. Click blue \"Gear\" icon in the top\n\t\t\t\tright corner to hide/show buttons,\n\t\t\t\ttext, title and change the block background.\n\t\t\t</h3>\n\t\t\t<div class=\"media-container-row\">\n\t\t\t\t<div class=\"card col-12 col-md-4\" mbr-class=\"{'col-lg-4': cardsAmount == '2',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/19.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<p class=\"date mb-4\" mbr-if=\"showDate\" data-app-selector=\".date\">\n\t\t\t\t\t\t\t<span>10 december 2025</span>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showContentTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tMarket Outlook 2026?\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cupiditate est eveniet, in\n\t\t\t\t\t\t\tiusto labore libero minima minus\n\t\t\t\t\t\t\tneque nisi nulla officia perspiciatis.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn-underline mr-3\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Read More &gt;</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"card col-12 col-md-4\" mbr-if=\"cardsAmount > 1\" mbr-class=\"{'col-lg-4': cardsAmount == '2',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/20.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<p class=\"date mb-4\" mbr-if=\"showDate\" data-app-selector=\".date\">\n\t\t\t\t\t\t\t<span>15 december 2025</span>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showContentTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tInvesting Options in 2026\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cupiditate est eveniet, in\n\t\t\t\t\t\t\tiusto labore libero minima minus\n\t\t\t\t\t\t\tneque nisi nulla officia perspiciatis.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n\t\t\t\t\t\t\t<a class=\"btn-underline mr-3\" href=\"https://mobiri.se\">Read More &gt;</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"card col-12 col-md-4\" mbr-if=\"cardsAmount > 2\" mbr-class=\"{'col-lg-4': cardsAmount == '2',\n                             'col-lg-4': cardsAmount == '3'}\">\n\t\t\t\t\t<div class=\"card-img\">\n\t\t\t\t\t\t<img src=\"@PROJECT_PATH@/assets/images/21.jpg\" alt=\"Mobirise\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"card-box\">\n\t\t\t\t\t\t<p class=\"date mb-4\" mbr-if=\"showDate\" data-app-selector=\".date\">\n\t\t\t\t\t\t\t<span>17 december 2025</span>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showContentTitle\" data-app-selector=\".card-title, .card-img\">\n\t\t\t\t\t\t\tEconomy Goes Up\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cupiditate est eveniet, in\n\t\t\t\t\t\t\tiusto labore libero minima minus\n\t\t\t\t\t\t\tneque nisi nulla officia perspiciatis.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n\t\t\t\t\t\t\t<a class=\"btn-underline mr-3\" href=\"https://mobiri.se\">Read More &gt;</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+          "_anchor": "features8-f8",
+          "_isUserblock": true,
+          "_cid": "v1FS64pSfT",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 1rem)",
@@ -1608,7 +1680,7 @@
           },
           "_name": "slider02",
           "_sourceTheme": "forwardm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"slider02 mbr-embla forwardm5\" group=\"Sliders &amp; Galleries\" plugins=\"embla\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" name=\"showTitle\" title=\"Title\">\n        <header>Carousel</header>\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked=\"\">\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"3\" step=\"1\" condition=\"autoplay\">\n        <input type=\"checkbox\" title=\"Loop\" name=\"loop\" checked=\"\">\n        <input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrows\" title=\"Arrows\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\" checked=\"\">\n        <input type=\"color\" title=\"Arrows Color\" value=\"#0f1d07\" name=\"arrowsColor\" condition=\"arrows\" selected=\"\">\n        <input type=\"color\" title=\"Arrows BG\" value=\"#90f188\" name=\"arrowsBg\" condition=\"arrows\" selected=\"\">\n        <header>Cards</header>\n        <input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"36\" step=\"6\" value=\"12\">\n        <input type=\"checkbox\" name=\"showCardTitle\" title=\"Card Title\">\n        <input type=\"color\" title=\"Title BG 1\" value=\"#7D41D1\" name=\"title_1\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 2\" value=\"#4FD741\" name=\"title_2\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 3\" value=\"#3799EA\" name=\"title_3\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 4\" value=\"#000000\" name=\"title_4\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"checkbox\" name=\"showDate\" title=\"Card Date\">\n        <input type=\"checkbox\" name=\"showText\" title=\"Card Text\">\n        <input type=\"checkbox\" name=\"showButtons\" title=\"Card Buttons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\" required=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f8f8f8\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"title-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                        Events\n                    </h2>\n                </div>\n            </div>\n            <div class=\"col-12\">\n                <div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n                    <div class=\"embla__viewport\">\n                        <div class=\"embla__container\">\n                            <div class=\"embla__slide slider-image item active\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/083a975020-20copy-1152x768.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Symposium\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                04.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Digital Mastery Symposium:\n                                                <span>Hosted annually by our digital marketing agency, the Digital Mastery\n                                                Symposium brings together industry leaders.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3206-1152x768.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Series\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                08.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Elevate Workshop Series:\n                                                <span>As part of our commitment to continuous learning, we organize a series\n                                                of hands-on workshops throughout the year.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/photo-2023-12-20-16-49.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"2\" data-bs-slide-to=\"2\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Gala\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                12.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Client Success Gala:\n                                                <span>Celebrating the achievements of our clients is at the heart of our\n                                                values.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3208-2000x1333.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Expo\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                18.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Digital Trends Expo:\n                                               <span> The Digital Trends Expo is a dynamic showcase of the latest tools,\n                                                technologies, and innovations.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"4\" data-bs-slide-to=\"4\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Impact Day\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                26.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Community Impact Day:\n                                                <span>Beyond business, our agency is dedicated to making a positive\n                                                    impact on the community.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3199-1245x830.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-19-photo.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"6\" data-bs-slide-to=\"6\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-17-photo.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"7\" data-bs-slide-to=\"7\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <button class=\"embla__button embla__button--prev\">\n                        <span class=\"mobi-mbri mobi-mbri-left mbr-iconfont\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Previous</span>\n                    </button>\n                    <button class=\"embla__button embla__button--next\">\n                        <span class=\"mobi-mbri mobi-mbri-right mbr-iconfont\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Next</span>\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"slider02 mbr-embla forwardm5\" group=\"Sliders &amp; Galleries\" plugins=\"embla\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" name=\"showTitle\" title=\"Title\">\n        <header>Carousel</header>\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked=\"\">\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"3\" step=\"1\" condition=\"autoplay\">\n        <input type=\"checkbox\" title=\"Loop\" name=\"loop\" checked=\"\">\n        <input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrows\" title=\"Arrows\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\" checked=\"\">\n        <input type=\"color\" title=\"Arrows Color\" value=\"#0f1d07\" name=\"arrowsColor\" condition=\"arrows\" selected=\"\">\n        <input type=\"color\" title=\"Arrows BG\" value=\"#90f188\" name=\"arrowsBg\" condition=\"arrows\" selected=\"\">\n        <header>Cards</header>\n        <input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"36\" step=\"6\" value=\"12\">\n        <input type=\"checkbox\" name=\"showCardTitle\" title=\"Card Title\">\n        <input type=\"color\" title=\"Title BG 1\" value=\"#7D41D1\" name=\"title_1\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 2\" value=\"#4FD741\" name=\"title_2\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 3\" value=\"#3799EA\" name=\"title_3\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"color\" title=\"Title BG 4\" value=\"#000000\" name=\"title_4\" condition=\"showCardTitle\" selected=\"\">\n        <input type=\"checkbox\" name=\"showDate\" title=\"Card Date\">\n        <input type=\"checkbox\" name=\"showText\" title=\"Card Text\">\n        <input type=\"checkbox\" name=\"showButtons\" title=\"Card Buttons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\" required=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f8f8f8\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"title-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n                        Events\n                    </h2>\n                </div>\n            </div>\n            <div class=\"col-12\">\n                <div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n                    <div class=\"embla__viewport\">\n                        <div class=\"embla__container\">\n                            <div class=\"embla__slide slider-image item active\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/083a975020-20copy-1152x768.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"0\" data-bs-slide-to=\"0\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Symposium\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                04.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Digital Mastery Symposium:\n                                                <span>Hosted annually by our digital marketing agency, the Digital Mastery\n                                                Symposium brings together industry leaders.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3206-1152x768.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"1\" data-bs-slide-to=\"1\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Series\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                08.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Elevate Workshop Series:\n                                                <span>As part of our commitment to continuous learning, we organize a series\n                                                of hands-on workshops throughout the year.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/photo-2023-12-20-16-49.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"2\" data-bs-slide-to=\"2\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Gala\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                12.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Client Success Gala:\n                                                <span>Celebrating the achievements of our clients is at the heart of our\n                                                values.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3208-2000x1333.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"3\" data-bs-slide-to=\"3\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Expo\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                18.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Digital Trends Expo:\n                                               <span> The Digital Trends Expo is a dynamic showcase of the latest tools,\n                                                technologies, and innovations.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-19-photo.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"4\" data-bs-slide-to=\"4\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3199-1245x830.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"6\" data-bs-slide-to=\"6\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Impact Day\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                26.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Community Impact Day:\n                                                <span>Beyond business, our agency is dedicated to making a positive\n                                                    impact on the community.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div><div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-17-photo.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"7\" data-bs-slide-to=\"7\">\n                                            <div class=\"title-wrap\">\n                                                <h4 class=\"item-title mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-title, .title-wrap\" mbr-if=\"showCardTitle\">\n                                                    Ceremony\n                                                </h4>\n                                            </div>\n                                        </div>\n                                        <div class=\"item-content\">\n                                            <p class=\"item-date mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".item-date\" mbr-if=\"showDate\">\n                                                30.09.2030\n                                            </p>\n                                            <p class=\"item-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".item-text, .mbr-section-btn\" mbr-if=\"showText\">\n                                                Mavericks Awards Ceremony:\n                                                <span>The Digital Mavericks Awards recognize and celebrate individuals who\n                                                have made a significant impact.</span>\n                                            </p>\n                                        </div>\n                                    </div>\n                                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons=\"\" mbr-theme-style=\"display-4\">\n                                        <a href=\"\" class=\"btn item-btn btn-primary-outline\" data-app-placeholder=\"Type Text\">\n                                            Read More\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <button class=\"embla__button embla__button--prev\">\n                        <span class=\"mobi-mbri mobi-mbri-left mbr-iconfont\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Previous</span>\n                    </button>\n                    <button class=\"embla__button embla__button--next\">\n                        <span class=\"mobi-mbri mobi-mbri-right mbr-iconfont\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Next</span>\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_anchor": "slider02-f4",
           "_isUserblock": true,
           "_cid": "v1FymF56wK",
@@ -11930,6 +12002,106 @@
           "_params": {}
         },
         {
+          "_name": "gallery02",
+          "_sourceTheme": "rangem5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"gallery02\" group=\"Gallery & Slider\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <select title=\"Columns\" name=\"cardsWidth\">\n            <option value=\"12\">1</option>\n            <option value=\"6\">2</option>\n            <option value=\"4\">3</option>\n            <option value=\"3\" selected>4</option>\n            <option value=\"2\">6</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\">\n        <header>Card</header>\n        <input type=\"color\" title=\"Border Color\" value=\"#000000\" name=\"borderColor\" selected>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlayCard\" checked>\n        <input type=\"color\" title=\"Overlay Color\" value=\"#4b4b4b\" name=\"card\" selected condition=\"overlayCard\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/rangem5/components/_images/background1.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/rangem5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12 col-lg-10 mb-4\">\n                <div class=\"title-wrapper text-center\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .icon-wrap\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Gallery</b></h2>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image active\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/dji-fly-20241121-120942-715-1732180240152-photo-optimized-560x315.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45-14.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2023-12-20-16-49.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-46.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            \n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-09-12-20-49-12-784x976.jpeg\" alt=\"Mobirise Website Builder\" data-slide-to=\"5\" data-bs-slide-to=\"5\">\n                        </div>\n                    </a>\n                </div>\n            </div><div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45-13.jpg\" alt=\"Mobirise Website Builder\" data-slide-to=\"6\" data-bs-slide-to=\"6\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n            <div class=\"col-12 col-m-6 col-lg-{{cardsWidth}} item features-image\">\n                <div class=\"item-wrapper\">\n                    <a href=\"#\">\n                        <div class=\"item-img\">\n                            <img src=\"@PROJECT_PATH@/assets/images/photo-2025-10-17-16-45-12-1000x750.jpg\" alt=\"Mobirise Website Builder\">\n                        </div>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "overflow": "hidden",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = \"video\")": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0 60px",
+                "@media (max-width: 992px)": {
+                  "padding": "0 25px"
+                }
+              }
+            },
+            ".container": {
+              "@media (max-width: 992px)": {
+                "padding": "0 25px"
+              }
+            },
+            ".row": {
+              "justify-content": "center"
+            },
+            ".item": {
+              "margin-bottom": "32px",
+              ".item-wrapper": {
+                "transition": "all 0.3s ease-in-out",
+                "background-color": "#000000",
+                "&:hover, &:focus": {
+                  "box-shadow": "2px 2px 0 0 @borderColor"
+                },
+                "overflow": "hidden",
+                "a": {
+                  "display": "block",
+                  "&:hover, &:focus": {
+                    ".item-img": {
+                      "&::after": {
+                        "opacity": "0"
+                      }
+                    }
+                  },
+                  ".item-img": {
+                    "position": "relative",
+                    "img": {
+                      "background-color": "@borderColor",
+                      "padding": "4px",
+                      "height": "310px",
+                      "object-fit": "cover",
+                      "transition": "all 0.3s ease-in-out"
+                    },
+                    "& when (@overlayCard)": {
+                      "&::after": {
+                        "content": "\"\"",
+                        "position": "absolute",
+                        "top": "0",
+                        "left": "0",
+                        "width": "100%",
+                        "height": "100%",
+                        "background-color": "@card",
+                        "opacity": "0.4",
+                        "transition": "all 0.3s ease-in-out",
+                        "pointer-events": "none"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_cid": "v1FYvuQnwG",
+          "_anchor": "gallery02-fc",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "_name": "tabs02",
           "_sourceTheme": "ridem5",
           "_styles": {
@@ -13690,6 +13862,162 @@
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"7\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showsubTitle\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header condition=\"showsubTitle\">Color</header>\n        <input type=\"color\" title=\"Subtitle Line\" name=\"subline\" value=\"#d4ceff\" selected condition=\"showsubTitle\">\n\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/devm5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f4f4f6\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/devm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n\n            <div class=\"col-12 col-md-12 col-lg\">\n                <div class=\"text-wrapper align-left md-pb\">\n                    <div class=\"subtitle-wrap\">\n                        <h2 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" data-app-selector=\".mbr-section-subtitle, .subtitle-wrap\" mbr-theme-style=\"display-7\" mbr-if=\"showsubTitle\">BUILDING FOR GROWTH</h2>\n                    </div>\n\n                    <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">Strategic Real Estate Development</h1>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Riders Real Estate &amp; Construction represents our investment in Ethiopia's rapidly growing property and infrastructure sectors. As part of our diversified portfolio, we develop commercial, residential, and industrial properties that meet the needs of Ethiopia's expanding economy.<br><br>With a focus on quality construction, sustainable design, and strategic location selection, we're creating value for shareholders while contributing to Ethiopia's urban development. Our projects range from commercial office spaces and residential developments to industrial facilities supporting our textile and agricultural operations.</p>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get Started</a></div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/heal-realestate-16-photo.jpg\" alt=\"Mobirise Website Builder\">\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "v0yH6Ycs1a",
           "_anchor": "header01-b7",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0",
+                "@media (max-width: 992px)": {
+                  "padding": "0 20px"
+                }
+              }
+            },
+            ".container": {
+              "@media (max-width: 992px)": {
+                "padding": "0 20px"
+              }
+            },
+            ".embla__slide": {
+              "display": "flex",
+              "justify-content": "center",
+              "position": "relative",
+              "min-width": "550px",
+              "max-width": "550px",
+              "@media (max-width: 767px)": {
+                "min-width": "100%",
+                "max-width": "100%"
+              },
+              "&:nth-child(2n)": {
+                "min-width": "440px",
+                "max-width": "440px",
+                "@media (max-width: 767px)": {
+                  "min-width": "100%",
+                  "max-width": "100%"
+                },
+                ".slide-content": {
+                  ".item-wrapper": {
+                    ".item-img": {
+                      "img": {
+                        "height": "570px",
+                        "@media (max-width: 992px)": {
+                          "height": "400px"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              ".slide-content": {
+                "width": "100%",
+                ".item-wrapper": {
+                  "display": "flex",
+                  "height": "100%",
+                  "align-items": "center",
+                  ".item-img": {
+                    "width": "100%",
+                    "img": {
+                      "height": "380px",
+                      "object-fit": "cover",
+                      "@media (max-width: 992px)": {
+                        "height": "300px"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            ".embla__button--next, .embla__button--prev": {
+              "display": "flex"
+            },
+            ".embla__button": {
+              "bottom": "0",
+              "width": "56px",
+              "height": "56px",
+              "margin-top": "-1.5rem",
+              "font-size": "22px",
+              "background-color": "@arrowsBg !important",
+              "color": "@arrowsColor !important",
+              "border": "none !important",
+              "border-radius": "100%",
+              "transition": "all 0.3s",
+              "position": "absolute",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "opacity": "1 !important",
+              "& when not (@arrows)": {
+                "display": "none"
+              },
+              "& when not (@arrowsMobile)": {
+                "@media (max-width: 768px)": {
+                  "display": "none"
+                }
+              },
+              "&:disabled": {
+                "cursor": "default",
+                "display": "none"
+              },
+              "&:hover": {
+                "opacity": ".6 !important"
+              },
+              "&.embla__button--prev": {
+                "right": "4rem"
+              },
+              "&.embla__button--next": {
+                "right": "0"
+              }
+            },
+            ".embla": {
+              "position": "relative",
+              "width": "100%",
+              "& when (@arrows)": {
+                "padding-bottom": "6rem"
+              }
+            },
+            ".embla__viewport": {
+              "overflow": "hidden",
+              "width": "100%",
+              "margin-right": "1rem"
+            },
+            ".embla__viewport.is-draggable": {
+              "cursor": "grab"
+            },
+            ".embla__viewport.is-dragging": {
+              "cursor": "grabbing"
+            },
+            ".embla__container": {
+              "display": "flex",
+              "user-select": "none",
+              "-webkit-touch-callout": "none",
+              "-khtml-user-select": "none",
+              "-webkit-tap-highlight-color": "transparent"
+            }
+          },
+          "_name": "slider01",
+          "_sourceTheme": "placem5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"slider01 mbr-embla\" group=\"Sliders &amp; Galleries\" plugins=\"embla\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <header>Carousel</header>\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked=\"\">\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"2\" step=\"1\" condition=\"autoplay\">\n        <input type=\"checkbox\" title=\"Loop\" name=\"loop\" checked=\"\">\n        <input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked=\"\">\n        <input type=\"checkbox\" name=\"arrows\" title=\"Arrows\">\n        <input type=\"color\" title=\"Arrows Color\" value=\"#F2EDE4\" name=\"arrowsColor\" condition=\"arrows\" selected=\"\">\n        <input type=\"color\" title=\"Arrows Bg\" value=\"#1e1d1c\" name=\"arrowsBg\" condition=\"arrows\" selected=\"\">\n        <input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\" checked=\"\">\n        <header>Cards</header>\n        <input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"50\" step=\"10\" value=\"10\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\" required=\"\">\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/placem5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#e3e3e3\" selected=\"\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay &amp;&amp; bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type !== 'color'\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n                    <div class=\"embla__viewport\">\n                        <div class=\"embla__container\">\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/t-1-photo.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-19-photo.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-13-photo.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/heal-realestate-17-photo.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/t-5-photo.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'px', 'margin-right': gap + 'px'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/screenshot-2025-11-05-at-15.10.25-1.png\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <button class=\"embla__button embla__button--prev\">\n                        <span class=\"mbr-iconfont mobi-mbri-left mobi-mbri\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Previous</span>\n                    </button>\n                    <button class=\"embla__button embla__button--next\">\n                        <span class=\"mbr-iconfont mobi-mbri-right mobi-mbri\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Next</span>\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "v1G1GwKPby",
+          "_anchor": "slider01-fd",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -18703,6 +19031,190 @@
           "_anchor": "article04-ag",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_name": "slider05",
+          "_sourceTheme": "divem5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"slider05 mbr-embla divem5\" group=\"Sliders & Galleries\" plugins=\"embla\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"3\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" name=\"showTitle\" title=\"Title\">\n        <input type=\"checkbox\" name=\"showText\" title=\"Text\">\n        <input type=\"color\" title=\"Secondary BG\" value=\"#f7f7f7\" name=\"secBg\" selected>\n        <header>Carousel</header>\n        <input type=\"checkbox\" title=\"Autoplay\" name=\"autoplay\" checked>\n        <input type=\"range\" title=\"Interval\" name=\"interval\" min=\"1\" max=\"10\" value=\"5\" step=\"1\" condition=\"autoplay\">\n        <input type=\"checkbox\" title=\"Loop\" name=\"loop\" checked>\n        <input type=\"checkbox\" title=\"Draggable\" name=\"draggable\" checked>\n        <input type=\"checkbox\" name=\"arrows\" title=\"Arrows\" checked>\n        <input type=\"checkbox\" name=\"arrowsMobile\" title=\"Mobile Arrows\" condition=\"arrows\" checked>\n        <input type=\"color\" title=\"Arrows Color\" value=\"#000000\" name=\"arrowsColor\" condition=\"arrows\" selected>\n        <input type=\"color\" title=\"Arrows BG\" value=\"#f0f0f0\" name=\"arrowsBg\" condition=\"arrows\" selected>\n        <header>Cards</header>\n        <input type=\"range\" name=\"gap\" title=\"Gap\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax required>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/divem5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#e3e3e3\" selected>\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.1\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"title-wrapper\" mbr-if=\"showTitle || showText\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\">\n                        <b>Our work</b>\n                    </h2>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" mbr-if=\"showText\">\n                        See what beautiful places you can find yourself in.\n                    </p>\n                </div>\n            </div>\n            <div class=\"col-12\">\n                <div class=\"embla\" data-loop=\"{{loop}}\" data-auto-play=\"{{autoplay}}\" data-auto-play-interval=\"{{interval}}\" data-draggable=\"{{draggable}}\" data-skip-snaps=\"true\" data-align=\"center\" data-contain-scroll=\"trimSnaps\">\n                    <div class=\"embla__viewport\">\n                        <div class=\"embla__container\">\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3200-520x347.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3215-1245x830.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3267-440x293.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"embla__slide slider-image item\" mbr-style=\"{'margin-left': gap + 'rem', 'margin-right': gap + 'rem'}\">\n                                <div class=\"slide-content\">\n                                    <div class=\"item-wrapper\">\n                                        <div class=\"item-img\">\n                                            <img src=\"@PROJECT_PATH@/assets/images/1d3a3208-2000x1333.jpg\" alt=\"Mobirise Website Builder\">\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <button class=\"embla__button embla__button--prev\">\n                        <span class=\"mbr-iconfont mobi-mbri-left mobi-mbri\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Previous</span>\n                    </button>\n                    <button class=\"embla__button embla__button--next\">\n                        <span class=\"mbr-iconfont mobi-mbri-right mobi-mbri\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden visually-hidden\">Next</span>\n                    </button>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "position": "relative",
+            "&::after": {
+              "content": "''",
+              "position": "absolute",
+              "left": "0",
+              "bottom": "0",
+              "height": "40%",
+              "width": "100%",
+              "background-color": "@secBg"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              "& when (@overlay)": {
+                ".mbr-overlay": {
+                  "background": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0",
+                "z-index": "1",
+                "@media (max-width: 992px)": {
+                  "padding": "0"
+                }
+              }
+            },
+            "@media (max-width: 992px)": {
+              ".container": {
+                "padding": "0 25px"
+              }
+            },
+            ".title-wrapper": {
+              "padding": "0 45px",
+              "margin-bottom": "50px",
+              "@media (max-width: 992px)": {
+                "padding": "0 25px"
+              },
+              ".mbr-section-title": {
+                "margin-bottom": "10px"
+              },
+              ".mbr-text": {
+                "margin-bottom": "0"
+              }
+            },
+            ".item:focus, span:focus": {
+              "outline": "none"
+            },
+            ".item-wrapper": {
+              "position": "relative"
+            },
+            ".embla__slide": {
+              "display": "flex",
+              "justify-content": "center",
+              "position": "relative",
+              "min-width": "810px",
+              "max-width": "810px",
+              "@media (max-width: 992px)": {
+                "min-width": "710px",
+                "max-width": "710px"
+              },
+              "@media (max-width: 767px)": {
+                "min-width": "100%",
+                "max-width": "100%"
+              },
+              ".slide-content": {
+                "width": "100%",
+                "border-radius": "0 !important",
+                ".item-wrapper": {
+                  ".item-img": {
+                    "img": {
+                      "height": "450px",
+                      "object-fit": "cover",
+                      "@media (max-width: 992px)": {
+                        "height": "350px"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            ".embla__button--next, .embla__button--prev": {
+              "display": "flex"
+            },
+            ".embla__button": {
+              "bottom": "0",
+              "width": "40px",
+              "height": "40px",
+              "margin-top": "-1.5rem",
+              "font-size": "20px",
+              "background-color": "@arrowsBg !important",
+              "color": "@arrowsColor !important",
+              "border": "none",
+              "border-radius": "50%",
+              "transition": "all 0.3s",
+              "position": "absolute",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center",
+              "& when not (@arrows)": {
+                "display": "none"
+              },
+              "& when not (@arrowsMobile)": {
+                "@media (max-width: 768px)": {
+                  "display": "none"
+                }
+              },
+              "&:disabled": {
+                "cursor": "default",
+                "display": "none"
+              },
+              "&.embla__button--prev": {
+                "left": "45%",
+                "@media (max-width: 768px)": {
+                  "left": "25px"
+                },
+                "&:hover": {
+                  "box-shadow": "inset -40px 0 0 0 @arrowsColor !important",
+                  "color": "@arrowsBg !important"
+                }
+              },
+              "&.embla__button--next": {
+                "right": "45%",
+                "@media (max-width: 768px)": {
+                  "right": "25px"
+                },
+                "&:hover": {
+                  "box-shadow": "inset 40px 0 0 0 @arrowsColor !important",
+                  "color": "@arrowsBg !important"
+                }
+              }
+            },
+            ".embla": {
+              "position": "relative",
+              "width": "100%",
+              "& when (@arrows)": {
+                "padding-bottom": "6rem"
+              }
+            },
+            ".embla__viewport": {
+              "overflow": "hidden",
+              "width": "100%",
+              "margin-right": "1rem"
+            },
+            ".embla__viewport.is-draggable": {
+              "cursor": "grab"
+            },
+            ".embla__viewport.is-dragging": {
+              "cursor": "grabbing"
+            },
+            ".embla__container": {
+              "display": "flex",
+              "user-select": "none",
+              "-webkit-touch-callout": "none",
+              "-khtml-user-select": "none",
+              "-webkit-tap-highlight-color": "transparent"
+            },
+            ".mbr-section-title": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".mbr-text": {
+              "color": "#000000",
+              "text-align": "center"
+            }
+          },
+          "_cid": "v1FUMdORUB",
+          "_anchor": "slider05-fa",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
