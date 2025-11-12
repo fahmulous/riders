@@ -14678,14 +14678,6 @@ a {
 .cid-v0BTUv5p8U .row .card {
   padding: 0 45px;
 }
-.cid-v0BTUv5p8U .content-wrap {
-  padding-top: 66px;
-}
-@media (max-width: 992px) {
-  .cid-v0BTUv5p8U .content-wrap {
-    padding-top: 0;
-  }
-}
 .cid-v0BTUv5p8U .content-wrap .text-wrapper .mbr-text {
   margin-bottom: 12px;
 }
