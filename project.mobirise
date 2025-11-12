@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "documents.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "operationm5",
       "title": "OperationM5",
@@ -131,7 +131,7 @@
       }
     ],
     "imageResize": false,
-    "uniqCompNum": 566,
+    "uniqCompNum": 567,
     "versionPublish": "6.0.6",
     "screenshot": "screenshot.png",
     "favicon": false,
@@ -1010,8 +1010,26 @@
         {
           "alias": false,
           "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "overflow": "hidden",
+            "position": "relative",
+            "& when (@showDecor)": {
+              "&::before": {
+                "content": "''",
+                "position": "absolute",
+                "top": "-20%",
+                "right": "-15%",
+                "width": "32rem",
+                "height": "100%",
+                "background-image": "linear-gradient(60deg, @decor_1 0, @decor_2 100%)",
+                "border-radius": "100%",
+                "z-index": "1",
+                "filter": "blur(70px)"
+              }
+            },
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
@@ -1033,88 +1051,91 @@
                 "background-image": "url(@fallBackImage)"
               }
             },
-            ".title-wrapper": {
-              ".mbr-section-title": {
-                "display": "inline-block",
-                "width": "50%",
-                "margin-bottom": "30px",
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0 64px",
                 "@media (max-width: 992px)": {
-                  "width": "100%",
-                  "margin-bottom": "40px"
+                  "padding": "0 24px"
                 }
               }
             },
-            ".items-wrapper": {
-              "display": "grid",
-              "grid-template-columns": "1fr 1fr 1fr 1fr",
-              "gap": "64px",
-              "@media (max-width: 1440px)": {
-                "grid-template-columns": "1fr 1fr"
-              },
+            ".container": {
               "@media (max-width: 992px)": {
-                "display": "block"
+                "padding": "0 24px"
+              }
+            },
+            ".row": {
+              "justify-content": "center",
+              ".card, .item": {
+                "padding": "0 12px"
+              }
+            },
+            ".title-wrapper": {
+              "position": "relative",
+              "z-index": "1",
+              "margin-bottom": "30px",
+              "@media (max-width: 992px)": {
+                "margin-bottom": "30px"
+              },
+              ".mbr-section-title": {
+                "margin-bottom": "24px"
+              },
+              ".mbr-text": {
+                "margin-bottom": "0"
               }
             },
             ".item": {
-              "@media (max-width: 992px)": {
-                "margin-bottom": "40px"
-              },
+              "position": "relative",
+              "z-index": "1",
+              "margin-bottom": "24px",
               ".item-wrapper": {
+                "padding": "32px",
+                "border-radius": ".75rem !important",
+                "background-color": "@card",
                 "height": "100%",
-                "display": "flex",
-                "flex-direction": "column",
-                "justify-content": "space-between",
+                "@media (max-width: 992px)": {
+                  "padding": "24px"
+                },
                 ".card-box": {
-                  ".iconfont-wrapper": {
-                    "margin-bottom": "30px",
-                    "@media (max-width: 992px)": {
-                      "margin-bottom": "20px"
-                    },
-                    ".mbr-iconfont": {
-                      "width": "64px",
-                      "height": "64px",
-                      "min-width": "64px",
-                      "display": "inline-flex",
-                      "align-items": "center",
-                      "justify-content": "center",
-                      "font-size": "40px",
-                      "color": "@icon",
-                      "background-color": "@iconBg"
-                    }
+                  ".card-number": {
+                    "margin-bottom": "24px",
+                    "opacity": ".4"
                   },
                   ".card-title": {
-                    "margin-bottom": "20px"
+                    "margin-bottom": "24px"
                   },
                   ".card-text": {
                     "margin-bottom": "0"
                   }
-                },
-                ".mbr-section-btn": {
-                  "margin-top": "20px",
-                  ".btn": {
-                    "margin-bottom": "0"
-                  }
                 }
               }
             },
-            ".mbr-section-title, .title-wrapper": {
-              "color": "#323432",
+            ".mbr-section-title": {
+              "color": "#141414",
               "text-align": "center"
             },
+            ".mbr-text": {
+              "color": "#141414",
+              "text-align": "center"
+            },
+            ".card-number": {
+              "color": "#141414"
+            },
             ".card-title": {
-              "color": "#323432"
+              "color": "#141414"
             },
             ".card-text": {
-              "color": "#323432"
+              "color": "#141414"
             }
           },
-          "_name": "features03",
-          "_sourceTheme": "plantm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features03 plantm5\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"2\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <header>Cards</header>\n        <input type=\"checkbox\" title=\"Card Icon\" name=\"showIcon\">\n        <input type=\"color\" title=\"Icon Color\" value=\"#d1e0be\" name=\"icon\" condition=\"showIcon\" selected>\n        <input type=\"color\" title=\"Icon Bg\" value=\"#1e4d2b\" name=\"iconBg\" condition=\"showIcon\" selected>\n        <input type=\"checkbox\" title=\"Card Title\" name=\"showCardTitle\" checked>\n        <input type=\"checkbox\" title=\"Card Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Card Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/plantm5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/plantm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#f1f5eb\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <div class=\"title-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .title-wrapper\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">Riders Trading and Manufacturing S.C.</h2>\n                                                            <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">For over three years, Riders Trading and Manufacturing S.C. has been a catalyst for Ethiopia's industrial growth. As one of the nation's fastest-growing investment share companies, we operate across five key sectors: Textile Manufacturing, Agriculture, Real Estate &amp; Construction, Financial Services, and Healthcare. Our businesses are deeply woven into the fabric of Ethiopia's economy—creating jobs, advancing industries, and elevating the nation's global competitiveness. Through strategic investments, world-class quality, and a deep commitment to the communities we serve, Riders continues to build a stronger, more prosperous Ethiopia.<br><br></p>\n                </div>\n            </div>\n            <div class=\"col-12\">\n                <div class=\"items-wrapper\">\n                    <div class=\"item features-without-image\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"card-box\">\n                                <div class=\"iconfont-wrapper icon-radius\" mbr-if=\"showIcon\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-setting mobi-mbri\"></span>\n                                </div>\n                                <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title, .mbr-section-btn, .iconfont-wrapper\"><b>Textile Industry</b></h4>\n                                <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n                                    Vertically integrated textile manufacturing in Adama: cotton ginning (20 tons/day), spinning, weaving (35,000+ meters/day), and recycling operations serving local and international markets.\n                                </p>\n                            </div>\n                            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-info\" href=\"textile-industry.html\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn\"></span>\n                                    \n                                    Read more\n                                </a></div>\n                        </div>\n                    </div>\n                    <div class=\"item features-without-image\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"card-box\">\n                                <div class=\"iconfont-wrapper icon-radius\" mbr-if=\"showIcon\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-protect mobi-mbri\"></span>\n                                </div>\n                                <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title, .mbr-section-btn, .iconfont-wrapper\"><b>\n                                    Farming\n                                </b></h4>\n                                <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n                                    Large-scale farming operations: Amibara (400ha operational), Gewane (3,000ha, $34M investment), and South Omo (2,000ha). Growing cotton, cereals, oilseeds, and export crops.\n                                </p>\n                            </div>\n                            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-info\" href=\"farming.html\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn\"></span>\n                                    \n                                    Read more\n                                </a></div>\n                        </div>\n                    </div>\n                    <div class=\"item features-without-image\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"card-box\">\n                                <div class=\"iconfont-wrapper icon-radius\" mbr-if=\"showIcon\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-image-slider mobi-mbri\"></span>\n                                </div>\n                                <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title, .mbr-section-btn, .iconfont-wrapper\"><b>Real Estate &amp; Construction</b></h4>\n                                <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n                                    Strategic real estate development and construction projects contributing to Ethiopia's infrastructure growth and urban development initiatives.\n                                </p>\n                            </div>\n                            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-info\" href=\"real-estate.html\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn\"></span>\n                                    \n                                    Read more\n                                </a></div>\n                        </div>\n                    </div>\n                    <div class=\"item features-without-image\">\n                        <div class=\"item-wrapper\">\n                            <div class=\"card-box\">\n                                <div class=\"iconfont-wrapper icon-radius\" mbr-if=\"showIcon\">\n                                    <span mbr-icon class=\"mbr-iconfont mobi-mbri-smile-face mobi-mbri\"></span>\n                                </div>\n                                <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title, .mbr-section-btn, .iconfont-wrapper\"><b>Financial Sectors</b></h4>\n                                <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".card-text\">\n                                    Strategic partnerships and investments in Ethiopia's financial sector including Zamzam Bank, Hijra Bank, and Amal Microfinance, expanding access to Islamic and conventional banking services.\n                                </p>\n                            </div>\n                            <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-info\" href=\"financial-sector.html\" data-app-placeholder=\"Type Text\"><span class=\"mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn\"></span>\n                                    \n                                    Read more\n                                </a></div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "v2k2BbQMjD",
-          "_anchor": "features03-fm",
-          "_PHPplaceholders": [],
+          "_name": "features04",
+          "_sourceTheme": "operationm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features04 operationm5\" group=\"Features\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"1\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Decoration\" name=\"showDecor\">\n        <input type=\"color\" title=\"Decoration Color 1\" value=\"#bfd42a\" name=\"decor_1\" condition=\"showDecor\">\n        <input type=\"color\" title=\"Decoration Color 2\" value=\"#309f5e\" name=\"decor_2\" condition=\"showDecor\">\n        <header>Cards</header>\n        <input type=\"checkbox\" title=\"Card Number\" name=\"showNumber\">\n        <input type=\"checkbox\" title=\"Card Title\" name=\"showCardTitle\" checked>\n        <input type=\"checkbox\" title=\"Card Text\" name=\"showCardText\" checked>\n        <input type=\"color\" title=\"Card BG\" value=\"#ffffff\" name=\"card\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background1-6.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f2f2f4\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@PROJECT_PATH@/assets/images/background1-6.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.9\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12 col-lg-10 card\">\n                <div class=\"title-wrapper\">\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">Riders Trading and Manufacturing S.C.</h2>\n                    <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-4\" mbr-if=\"showText\">For over three years, Riders Trading and Manufacturing S.C. has been a catalyst for Ethiopia's industrial growth. As one of the nation's fastest-growing investment share companies, we operate across five key sectors: Textile Manufacturing, Agriculture, Real Estate &amp; Construction, Financial Services, and Healthcare. Our businesses are deeply woven into the fabric of Ethiopia's economy—creating jobs, advancing industries, and elevating the nation's global competitiveness. Through strategic investments, world-class quality, and a deep commitment to the communities we serve, Riders continues to build a stronger, more prosperous Ethiopia.<br></p>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5  item features-without-image item-mb\">\n                <div class=\"item-wrapper\">\n                    <div class=\"card-box\">\n                        <p class=\"card-number mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-number\" mbr-if=\"showNumber\">\n                             📊\n                        </p>\n                        <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-title\" mbr-if=\"showCardTitle\">Textile Industry</h4>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text\" mbr-if=\"showCardText\">\n                            Vertically integrated textile manufacturing in Adama: cotton ginning (20 tons/day), spinning, weaving (35,000+ meters/day), and recycling operations serving local and international markets.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5 item features-without-image item-mb\">\n                <div class=\"item-wrapper\">\n                    <div class=\"card-box\">\n                        <p class=\"card-number mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-number\" mbr-if=\"showNumber\">\n                            ⚙️\n                        </p>\n                        <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-title\" mbr-if=\"showCardTitle\">Farming</h4>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text\" mbr-if=\"showCardText\">Large-scale farming operations: Amibara (400ha operational), Gewane (3,000ha, $34M investment), and South Omo (2,000ha). Growing cotton, cereals, oilseeds, and export crops.<br></p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5 item features-without-image item-mb\">\n                <div class=\"item-wrapper\">\n                    <div class=\"card-box\">\n                        <p class=\"card-number mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-number\" mbr-if=\"showNumber\">\n                             🤝\n                        </p>\n                        <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-title\" mbr-if=\"showCardTitle\">Real Estate &amp; Construction</h4>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text\" mbr-if=\"showCardText\">\n                            Strategic real estate development and construction projects contributing to Ethiopia's infrastructure growth and urban development initiatives.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5 item features-without-image item-mb\">\n                <div class=\"item-wrapper\">\n                    <div class=\"card-box\">\n                        <p class=\"card-number mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-number\" mbr-if=\"showNumber\">\n                             🌱\n                        </p>\n                        <h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".card-title\" mbr-if=\"showCardTitle\">Financial Sectors</h4>\n                        <p class=\"card-text mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".card-text\" mbr-if=\"showCardText\">Strategic partnerships and investments in Ethiopia's financial sector including Zamzam Bank, Hijra Bank, and Amal Microfinance, expanding access to Islamic and conventional banking services.<br></p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_JSplaceholders": [],
+          "_PHPplaceholders": [],
+          "_anchor": "features04-fq",
+          "_isUserblock": true,
+          "_cid": "v2keUuXCfR",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
