@@ -1877,8 +1877,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -1887,8 +1887,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -4135,8 +4135,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -4145,8 +4145,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -5759,8 +5759,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -5769,8 +5769,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -6931,8 +6931,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -6941,8 +6941,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -9126,8 +9126,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -9136,8 +9136,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -11528,8 +11528,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -11538,8 +11538,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -13804,8 +13804,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -13814,8 +13814,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -15304,8 +15304,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -15314,8 +15314,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -16878,8 +16878,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -16888,8 +16888,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -18196,8 +18196,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -18206,8 +18206,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -19449,8 +19449,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -19459,8 +19459,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -21206,8 +21206,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -21216,8 +21216,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -22373,8 +22373,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -22383,8 +22383,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
@@ -23602,8 +23602,8 @@
                   "margin-bottom": "-10px"
                 },
                 ".footer-logo-img": {
-                  "width": "150px !important",
-                  "max-height": "60px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "35px !important",
@@ -23612,8 +23612,8 @@
               },
               "@media (max-width: 576px)": {
                 ".footer-logo-img": {
-                  "width": "120px !important",
-                  "max-height": "50px !important"
+                  "width": "300px !important",
+                  "max-height": "150px !important"
                 },
                 ".tagline-footer-img": {
                   "height": "30px !important"
