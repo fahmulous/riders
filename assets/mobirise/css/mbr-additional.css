@@ -1390,6 +1390,10 @@ a {
   left: 5%;
   right: 5%;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 .cid-uZTumNPRNV .mbr-section-subtitle {
   background: rgba(222, 213, 213, 0.6);
@@ -1398,10 +1402,12 @@ a {
   border-radius: 8px;
   backdrop-filter: blur(5px);
   text-shadow: 2px 2px 4px rgba(231, 227, 227, 0.8);
+  margin-bottom: 0;
 }
 .cid-uZTumNPRNV .carousel-caption .btn-primary-doc {
   background: rgba(0, 0, 128, 0.9);
   backdrop-filter: blur(5px);
+  margin-top: 0;
 }
 .cid-uZTumNPRNV .mobi-mbri-arrow-next {
   margin-left: 5px;
@@ -1452,9 +1458,10 @@ a {
   }
   .cid-uZTumNPRNV .carousel-caption {
     bottom: 20% !important;
+    gap: 1rem;
   }
   .cid-uZTumNPRNV .carousel-caption h5 {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0 !important;
   }
   .cid-uZTumNPRNV .carousel-caption .btn-primary-doc {
     padding: 0.8rem 2rem !important;
@@ -1464,6 +1471,7 @@ a {
 @media (max-width: 576px) {
   .cid-uZTumNPRNV .carousel-caption {
     bottom: 15% !important;
+    gap: 0.8rem;
   }
   .cid-uZTumNPRNV .carousel-caption h5 {
     font-size: 1.5rem !important;
