@@ -12305,8 +12305,12 @@ a {
     font-size: 2rem;
   }
 }
-.cid-v0y8OsPAIO .mbr-section-title {
+.cid-v0y8OsPAIO .mbr-section-subtitle {
   padding-left: 2rem;
+  text-align: center;
+  color: #141414;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0 !important;
 }
 .cid-v0y8OsPAIO .content-wrap {
   position: relative;
@@ -12352,10 +12356,6 @@ a {
 .cid-v0y8OsPAIO .line {
   color: #141414;
   text-align: left;
-}
-.cid-v0y8OsPAIO .mbr-section-subtitle {
-  text-align: center;
-  color: #141414;
 }
 .cid-v0ydXR16ab {
   padding-top: 2rem;
