@@ -8114,11 +8114,11 @@ a {
   }
 }
 .cid-uW1i3UfwPa .title-wrapper .mbr-section-title {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 @media (max-width: 992px) {
   .cid-uW1i3UfwPa .title-wrapper .mbr-section-title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 .cid-uW1i3UfwPa .embla__slide {
@@ -8267,7 +8267,8 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 .cid-uW1i3UfwPa .mbr-section-title {
-  color: #0f1d07;
+  color: #141414;
+  text-align: center;
 }
 .cid-uW1i3UfwPa .item-title {
   color: #ffffff;
