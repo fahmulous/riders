@@ -18381,26 +18381,6 @@ a {
 .cid-v0fLVaJO0f .mbr-section-btn {
   color: #141414;
 }
-.cid-vbzL1eX7zd {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.cid-vbzL1eX7zd .eb-youtube-feed {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background: #f9f9f9;
-}
-.cid-vbzL1eX7zd .eb-youtube-feed iframe {
-  border-radius: 16px;
-  overflow: hidden;
-}
-.cid-vbzL1eX7zd .eb-youtube-feed img {
-  border-radius: 16px;
-}
-.cid-vbzL1eX7zd .eb-youtube-feed h3 {
-  font-weight: 600;
-  margin-top: 10px;
-}
 .cid-v0W6W3eApv {
   z-index: 1000;
   width: 100%;
@@ -19092,6 +19072,26 @@ a {
 .cid-v0W6W3eApv .nav-item .nav-link {
   font-weight: 600 !important;
   font-size: 1.05rem !important;
+}
+.cid-vbzL1eX7zd {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.cid-vbzL1eX7zd .eb-youtube-feed {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f9f9f9;
+}
+.cid-vbzL1eX7zd .eb-youtube-feed iframe {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cid-vbzL1eX7zd .eb-youtube-feed img {
+  border-radius: 16px;
+}
+.cid-vbzL1eX7zd .eb-youtube-feed h3 {
+  font-weight: 600;
+  margin-top: 10px;
 }
 .cid-v0fLVaJO0f {
   padding-top: 0rem;
